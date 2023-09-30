@@ -1,0 +1,263 @@
+@charset "utf-8";
+body {
+    font-family: sans-serif;
+}
+
+.balloon {
+    position: relative;
+    margin: 10px 45px 10px 30px;
+    padding: 10px;
+    width: fit-content;
+    min-width: 20px;
+    max-width: 100%;
+    color: #555;
+    font-size: 15px;
+    background: #30e852;
+    border-radius: 15px;
+}
+.balloon:before {
+    content: "";
+    position: absolute;
+    top: 5px;
+    left: -19px;
+    border: 8px solid transparent;
+    border-right: 18px solid #30e852;
+    -webkit-transform: rotate(20deg);
+    transform: rotate(20deg);
+} 
+.balloon p {
+    margin: 0px;
+    padding: 0px;
+}
+.balloon .icon {
+    font-size: 20px;
+    position: absolute;
+    top: -5px;
+    left: -35px;
+}
+
+.balloon .timestamp {
+    font-size: 11px;
+    position: absolute;
+    bottom: 0;
+    right: -35px;
+}
+
+.sumaho-frame, .sumaho-frame .sumaho-display {
+    width: 300px;
+    height: 560px;
+}
+
+.sumaho-frame .sumaho-display {
+    background-color: #7da4cd;/*スマホ画面の背景色*/
+    border-left: 10px #111 solid;/*スマホの色*/
+    border-right: 10px #111 solid;/*スマホの色*/
+    border-top: 10px #111 solid;/*スマホの色*/
+    border-bottom: 10px #111 solid;/*スマホの色*/
+    box-sizing: border-box;
+    border-radius: 40px;
+}
+
+.sumaho-frame {
+    position: relative;
+}
+
+.sumaho-frame:before {
+    z-index: 3;
+    position: absolute;
+    background-color: #111;
+    color: #666;
+    text-align: center;
+    font-family: 'MS PGothic', sans-serif;
+    line-height: 0.5em;
+    content: '…';
+    font-size: 30px;
+    border-radius: 0 0 15px 15px;
+    top: 9px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    height: 20px;
+    width: 120px;
+}
+
+.sumaho-display .status {
+    z-index: 2;
+    position: absolute;
+    height: 30px;
+    width: 280px;
+    top: 10px;
+    left: 10px;
+}
+
+.sumaho-display .status .left, .sumaho-display .status .right {
+    color: #000;
+    text-align: center;
+    vertical-align: text-top;
+    position: absolute;
+    line-height: 30px;
+    font-weight: 600;
+    height: 100%;
+    width: 23%;
+    margin: 0;
+}
+
+.sumaho-display .status .left {
+    font-size: 12px;
+    left: 5%;
+}
+
+.sumaho-display .status .right {
+    font-size: 10px;
+    right: 6%;
+}
+
+.sumaho-display .status p{
+    margin: 0;
+}
+
+.right .antenna, .right .antenna:before, .right .antenna:after {
+    content: "";
+    width: 3px;
+    height: 4px;
+    position: absolute;
+    left: 10%;
+    bottom: 10px;
+    background: #000;
+    border-radius: 3px;
+}
+
+.right .antenna:before{
+    height: 8px;
+    left: 5px;
+    bottom: 0;
+}
+
+.right .antenna:after{
+    height: 12px;
+    left: 10px;
+    bottom: 0;
+}
+
+/* バッテリーの中 */
+.right .battery{
+    width: 12px;
+    height: 8px;
+    background: #000;
+    border-radius: 2px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 46px;
+    margin: auto;
+}
+/* バッテリーの外枠 */
+.right .battery::before{
+    content: "";
+    width: 20px;
+    height: 10px;
+    background: #00000000;
+    border: 1px solid #000;
+    border-radius: 3px;
+    position: absolute;
+    top: -2px;
+    left: -2px;
+}
+/* バッテリー右の突起 */
+.right .battery::after{
+    content: "";
+    width: 1.5px;
+    height: 4px;
+    background: #000;
+    border-radius: 0 1px 1px 0;
+    position: absolute;
+    top: 2px;
+    left: 20.5px;
+}
+
+.sumaho-display .talk-title {
+    z-index: 1;
+    background: #7da4cd;
+    position: absolute;
+    height: 65px;
+    width: 280px;
+    top: 10px;
+    left: 10px;
+    border-radius: 30px 30px 0 0;
+}
+
+.sumaho-display .talk-title p{
+    position: absolute;
+    font-size: 20px;
+    font-weight: 600;
+    margin: 1px;
+    left: 15%;
+    bottom: 1px;
+}
+
+.talk-title:before {
+    content: "＜ 4";
+    position: absolute;
+    font-size: 14px;
+    font-weight: 400;
+    bottom: 5px;
+    left: 8px;
+}
+
+.sumaho-display .messages {
+    background-color: #00000000;/*スマホ画面の背景色*/
+    font-size: 14px;/*画面内のフォントサイズ*/
+    position: absolute;
+    height: 430px;
+    width: 280px;
+    top: 75px;
+    padding: 0 0 0 10px;
+    overflow: auto;
+    box-sizing: border-box;
+}
+
+.sumaho-display .input {
+    z-index: 1;
+    background: #fff;
+    position: absolute;
+    height: 45px;
+    width: 280px;
+    bottom: 10px;
+    left: 10px;
+    border-radius: 0 0 30px 30px;
+}
+
+.sumaho-display .input textarea {
+    resize: none;
+    background: #e8e8e8;
+    border: 1px solid #a4a4a4;
+    position: absolute;
+    width: 200px;
+    height: 16px;
+    max-height: 70%;
+    min-height: 15px;
+    top: 0;
+    bottom: 0;
+    left: 15px;
+    margin: auto;
+    font-size: 14px;
+    font-weight: 400;
+    padding: 3px 5px;
+    border-radius: 6px;
+    color:#666666;
+}
+
+.sumaho-display .input input {
+    background: #e8e8e8;
+    border: 1px solid #a4a4a4;
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    top: 0;
+    bottom: 0;
+    right: 15px;
+    margin: auto;
+    padding: 0 5px;
+    border-radius: 7px;
+    color:#3d74ff;
+}
